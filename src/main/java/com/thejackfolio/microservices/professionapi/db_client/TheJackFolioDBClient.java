@@ -2,7 +2,7 @@ package com.thejackfolio.microservices.professionapi.db_client;
 
 import com.thejackfolio.microservices.professionapi.models.Details;
 import com.thejackfolio.microservices.professionapi.models.Skill;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
