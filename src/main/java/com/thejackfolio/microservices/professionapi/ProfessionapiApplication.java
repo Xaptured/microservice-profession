@@ -6,14 +6,14 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableFeignClients
 @OpenAPIDefinition(
 		info = @Info(
-				title = "Client_APIs",
-				description = "All the client APIs are available here",
+				title = "Profession_APIs",
+				description = "All the profession APIs are available here",
 				version = "1.0.0",
 				termsOfService = "TheJackFolio.com",
 				contact = @Contact(
