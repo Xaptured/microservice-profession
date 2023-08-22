@@ -5,11 +5,13 @@ import com.thejackfolio.microservices.professionapi.exceptions.MapperException;
 import com.thejackfolio.microservices.professionapi.exceptions.ValidationException;
 import com.thejackfolio.microservices.professionapi.models.Skill;
 import com.thejackfolio.microservices.professionapi.services.SkillsService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Skills", description = "Skill APIs")
 @RestController
 @RequestMapping("/skills")
 public class SkillsController {
