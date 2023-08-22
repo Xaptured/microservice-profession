@@ -5,10 +5,12 @@ import com.thejackfolio.microservices.professionapi.exceptions.MapperException;
 import com.thejackfolio.microservices.professionapi.exceptions.ValidationException;
 import com.thejackfolio.microservices.professionapi.models.Details;
 import com.thejackfolio.microservices.professionapi.services.DetailsService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = "Details", description = "Detail APIs")
 @RestController
 @RequestMapping("/details")
 public class DetailsController {

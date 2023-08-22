@@ -33,7 +33,7 @@ public class IncomingValidations {
         if(personalDetails != null && personalDetails.getName() != null
                 && Strings.isNotEmpty(personalDetails.getEmail()) && Strings.isNotBlank(personalDetails.getEmail())
                 && personalDetails.getDateOfBirth() != null){
-            LOGGER.info("Validation passed for incoming request from UI");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_UI);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkPersonalDetailsFromUI for object: {}", personalDetails);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
@@ -48,7 +48,7 @@ public class IncomingValidations {
                     throw new ValidationException(StringConstants.VALIDATION_ERROR);
                 }
             }
-            LOGGER.info("Validation passed for incoming request from UI");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_UI);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkProfessionalDetailsFromUI for object: {}", professionalDetails);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
@@ -69,7 +69,7 @@ public class IncomingValidations {
         if(personalDetails != null && personalDetails.getName() != null
                 && Strings.isNotEmpty(personalDetails.getEmail()) && Strings.isNotBlank(personalDetails.getEmail()) && personalDetails.getDateOfBirth() != null
                 && Strings.isNotEmpty(details.getResponseMessage()) && Strings.isNotBlank(details.getResponseMessage())){
-            LOGGER.info("Validation passed for incoming request from DB");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_DB);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkPersonalDetailsFromDB for object: {}", details);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
@@ -85,7 +85,7 @@ public class IncomingValidations {
                     throw new ValidationException(StringConstants.VALIDATION_ERROR);
                 }
             }
-            LOGGER.info("Validation passed for incoming request from DB");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_DB);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkProfessionalDetailsFromDB for object: {}", details);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
@@ -103,7 +103,7 @@ public class IncomingValidations {
     private void checkUISkills(Skill skill) throws ValidationException {
         if(skill.getSkills().size() == SIZE && skill.getSkills().containsKey(SkillType.PERSONAL) && skill.getSkills().containsKey(SkillType.PROFESSIONAL)
             && !skill.getSkills().get(SkillType.PERSONAL).isEmpty() && !skill.getSkills().get(SkillType.PERSONAL).isEmpty()){
-            LOGGER.info("Validation passed for incoming request from UI");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_UI);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkUISkills for object: {}", skill);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
@@ -122,7 +122,7 @@ public class IncomingValidations {
         if(skill.getSkills().size() == SIZE && skill.getSkills().containsKey(SkillType.PERSONAL) && skill.getSkills().containsKey(SkillType.PROFESSIONAL)
                 && !skill.getSkills().get(SkillType.PERSONAL).isEmpty() && !skill.getSkills().get(SkillType.PERSONAL).isEmpty()
                 && Strings.isNotEmpty(skill.getMessage()) && Strings.isNotBlank(skill.getMessage())){
-            LOGGER.info("Validation passed for incoming request from DB");
+            LOGGER.info(StringConstants.VALIDATION_PASSED_DB);
         } else {
             LOGGER.error("Validation failed in IncomingValidations.class : checkDBSkills for object: {}", skill);
             throw new ValidationException(StringConstants.VALIDATION_ERROR);
