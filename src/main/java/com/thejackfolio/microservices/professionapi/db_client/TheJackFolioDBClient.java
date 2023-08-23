@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "Details-db-client",url = "http://localhost:8080/clients")
+@FeignClient(name = "Details-db-client",url = "http://localhost:8080")
 public interface TheJackFolioDBClient {
 
-    @PostMapping("/save-details")
+    @PostMapping("/details/save-details")
     public ResponseEntity<Details> saveDetails(@RequestBody Details details);
 
-    @GetMapping("/get-details")
+    @GetMapping("/details/get-details")
     public ResponseEntity<Details> getDetails();
 
-    @PostMapping("/save-skills")
+    @PostMapping("/skills/save-skills")
     public ResponseEntity<Skill> saveSkills(@RequestBody Skill skill);
 
-    @GetMapping("/get-skills")
+    @GetMapping("/skills/get-skills")
     public ResponseEntity<Skill> getSkills();
 }
