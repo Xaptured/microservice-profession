@@ -6,6 +6,7 @@ import com.thejackfolio.microservices.professionapi.exceptions.ValidationExcepti
 import com.thejackfolio.microservices.professionapi.models.Details;
 import com.thejackfolio.microservices.professionapi.services.DetailsService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/details")
 public class DetailsController {
 
+    @Autowired
     private DetailsService service;
 
     @PostMapping("/save-details")
