@@ -6,6 +6,8 @@ The complete High Level Document will be added in all the repositories to unders
 
 #### Other repositories related to this project:
 
+TheJackFolioParentRepository : https://github.com/Xaptured/TheJackFolioParentRepository
+
 microservice-thejackfolio_db : https://github.com/Xaptured/microservice-thejackfolio_db
 
 microservice-client : https://github.com/Xaptured/microservice-client
@@ -13,6 +15,8 @@ microservice-client : https://github.com/Xaptured/microservice-client
 microservice-instagram : https://github.com/Xaptured/microservice-instagram
 
 microservice-youtube : https://github.com/Xaptured/microservice-youtube
+
+microservice-instagram-oauth-client : https://github.com/Xaptured/microservice-instagram-oauth-client
 
 If you want to clone this repository and use it in your local, then you can use it directly. No configuration needed.
 
