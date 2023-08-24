@@ -70,7 +70,7 @@ public class Address implements Serializable {
     }
 
     public void setstate(String state) {
-        state = state;
+        this.state = state;
     }
 
     public String getCountry() {
