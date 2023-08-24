@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "Details-db-client",url = "http://localhost:8080")
+@FeignClient(name = "DATABASE-SERVICE")
 public interface TheJackFolioDBClient {
 
     @PostMapping("/details/save-details")
