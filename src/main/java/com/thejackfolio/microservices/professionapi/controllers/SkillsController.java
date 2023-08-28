@@ -37,6 +37,12 @@ public class SkillsController {
     public ResponseEntity<Skill> saveSkills(@RequestBody Skill skill){
         Skill response = null;
         try{
+            if(isRetryEnabled){
+                LOGGER.info(StringConstants.RETRY_MESSAGE);
+            }
+            if(!isRetryEnabled){
+                isRetryEnabled = true;
+            }
             response = service.saveSkills(skill);
         } catch (ValidationException | MapperException | DataBaseOperationException exception){
             if(skill == null){
@@ -45,6 +51,7 @@ public class SkillsController {
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(skill);
             }
         }
+        isRetryEnabled = false;
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -65,12 +72,19 @@ public class SkillsController {
     public ResponseEntity<Skill> getSkills(){
         Skill response = null;
         try{
+            if(isRetryEnabled){
+                LOGGER.info(StringConstants.RETRY_MESSAGE);
+            }
+            if(!isRetryEnabled){
+                isRetryEnabled = true;
+            }
             response = service.getSkills();
         } catch (ValidationException | MapperException | DataBaseOperationException exception) {
             response = new Skill();
             response.setMessage(exception.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
+        isRetryEnabled = false;
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
