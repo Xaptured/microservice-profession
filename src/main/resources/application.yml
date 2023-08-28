@@ -1,0 +1,27 @@
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  retry:
+    instances:
+      save-details-db-retry:
+        max-attempts: 3
+        wait-duration: 5s
+      get-details-db-retry:
+        max-attempts: 3
+        wait-duration: 5s
+      save-skills-db-retry:
+        max-attempts: 3
+        wait-duration: 5s
+      get-skills-db-retry:
+        max-attempts: 3
+        wait-duration: 5s
