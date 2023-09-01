@@ -11,6 +11,7 @@ import java.util.Objects;
 public class PersonalDetails implements Serializable {
 
     private Name name;
+    private String description;
     private String email;
     private Date dateOfBirth;
     private Address address;
@@ -21,8 +22,9 @@ public class PersonalDetails implements Serializable {
     public PersonalDetails() {
     }
 
-    public PersonalDetails(Name name, String email, Date dateOfBirth, Address address, String phoneNumber, Education education, Link link) {
+    public PersonalDetails(Name name, String description, String email, Date dateOfBirth, Address address, String phoneNumber, Education education, Link link) {
         this.name = name;
+        this.description = description;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
@@ -37,6 +39,14 @@ public class PersonalDetails implements Serializable {
 
     public void setName(Name name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getEmail() {
@@ -92,18 +102,19 @@ public class PersonalDetails implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PersonalDetails that = (PersonalDetails) o;
-        return Objects.equals(name, that.name) && Objects.equals(email, that.email) && Objects.equals(dateOfBirth, that.dateOfBirth) && Objects.equals(address, that.address) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(education, that.education) && Objects.equals(link, that.link);
+        return Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(email, that.email) && Objects.equals(dateOfBirth, that.dateOfBirth) && Objects.equals(address, that.address) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(education, that.education) && Objects.equals(link, that.link);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, dateOfBirth, address, phoneNumber, education, link);
+        return Objects.hash(name, description, email, dateOfBirth, address, phoneNumber, education, link);
     }
 
     @Override
     public String toString() {
         return "PersonalDetails{" +
                 "name=" + name +
+                ", description='" + description + '\'' +
                 ", email='" + email + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", address=" + address +
