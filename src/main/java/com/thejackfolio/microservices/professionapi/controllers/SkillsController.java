@@ -69,7 +69,6 @@ public class SkillsController {
     )
     @GetMapping("/get-skills")
     @Retry(name = "get-skills-db-retry", fallbackMethod = "getSkillsDBRetry")
-    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Skill> getSkills(){
         Skill response = null;
         try{

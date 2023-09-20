@@ -68,7 +68,6 @@ public class DetailsController {
     )
     @GetMapping("/get-details")
     @Retry(name = "get-details-db-retry", fallbackMethod = "getDetailsDBRetry")
-    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Details> getDetails(){
         Details response = null;
         try{
