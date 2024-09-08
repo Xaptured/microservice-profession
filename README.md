@@ -1,3 +1,7 @@
+[![Build and Test Java Spring Boot Application](https://github.com/Xaptured/microservice-profession/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Xaptured/microservice-profession/actions/workflows/build-and-test.yml)
+
+[![Dependabot Updates](https://github.com/Xaptured/microservice-profession/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/Xaptured/microservice-profession/actions/workflows/dependabot/dependabot-updates)
+
 # microservice-profession
 
 This microservice is used to initialize all the of my professional and personal information in the database and send them to the website. 
